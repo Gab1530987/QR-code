@@ -1,0 +1,35 @@
+<!DOCTYPE html> <!-- Déclaration du type de document HTML5 -->
+<html lang="fr"> <!-- Début du document HTML avec la langue définie comme français -->
+<head>
+    <meta charset="UTF-8"> <!-- Définit l'encodage des caractères à UTF-8 pour prendre en charge les caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que la page est responsive et s'adapte aux écrans de différentes tailles -->
+    <title>DécompteQRcode</title> <!-- Définit le titre de la page qui s'affiche dans l'onglet du navigateur -->
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS externe pour appliquer les styles à la page -->
+</head>
+<body>
+    <header>
+        <h1>Bientot disponible</h1> <!-- Titre principal de la page -->
+    </header>
+    <main>
+        <div id="countdown"> <!-- Conteneur principal pour le décompte -->
+            <h2>Temps restant :</h2> <!-- Sous-titre pour la section de décompte -->
+            <div id="timer"> <!-- Conteneur pour les éléments du décompte -->
+                <span id="days"></span> Jours <!-- Élément pour afficher le nombre de jours restants -->
+                <span id="hours"></span> Heures <!-- Élément pour afficher le nombre d'heures restantes -->
+                <span id="minutes"></span> Minutes <!-- Élément pour afficher le nombre de minutes restantes -->
+                <span id="seconds"></span> Secondes <!-- Élément pour afficher le nombre de secondes restantes -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Décompte</p> <!-- Texte de copyright pour le bas de la page -->
+    </footer>
+    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript externe pour la logique du décompte -->
+</body>
+</html>
+
+        <p>&copy; 2024 Décompte</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
