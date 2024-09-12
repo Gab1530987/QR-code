@@ -1,35 +1,135 @@
-<!DOCTYPE html> <!-- Déclaration du type de document HTML5 -->
-<html lang="fr"> <!-- Début du document HTML avec la langue définie comme français -->
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"> <!-- Définit l'encodage des caractères à UTF-8 pour prendre en charge les caractères spéciaux -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que la page est responsive et s'adapte aux écrans de différentes tailles -->
-    <title>DécompteQRcode</title> <!-- Définit le titre de la page qui s'affiche dans l'onglet du navigateur -->
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS externe pour appliquer les styles à la page -->
+    <meta charset="UTF-8"> <!-- Définit l'encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que la page est responsive -->
+    <title>QRcode</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <style>
+        body {
+            font-family: 'League Spartan', leadue spartan; /* Définit la police pour tout le texte de la page */
+            margin: 0; /* Supprime la marge par défaut */
+            padding: 0; /* Supprime le padding par défaut */
+            background-color: #ffffff; /* Couleur de fond de la page */
+            color: #ffffff; /* Couleur du texte */
+            text-align: center; /* Centre le texte */
+        }
+
+        header {
+            background-color: #0350a3; /* Couleur de fond de l'en-tête */
+            color: #ffde59; /* Couleur du texte dans l'en-tête */
+            padding: 20px 0; /* Espacement interne en haut et en bas de l'en-tête */
+            position: relative; /* Positionnement relatif pour contenir l'image */
+        }
+
+        .header-img-container {
+            position: absolute; /* Positionne le conteneur de l'image de manière absolue */
+            top:   10px; /* Distance du haut de l'en-tête */
+            left: 50%; /* Centre horizontalement par rapport à l'en-tête */
+            transform: translateX(-50%); /* Centre le conteneur de l'image */
+            width: 35px; /* Largeur du cercle */
+            height: 35px; /* Hauteur du cercle */
+            background-color: #ffffff; /* Couleur de fond du cercle */
+            border-radius: 10%; /* Crée un cercle */
+            display: flex; /* Utilisé pour centrer l'image */
+            align-items: center; /* Centre l'image verticalement */
+            justify-content: center; /* Centre l'image horizontalement */
+            z-index: 1; /* Place le cercle derrière l'image */
+        }
+
+        header img {
+            width: 75%; /* Ajuste la largeur de l'image pour s'adapter au cercle */
+            height: auto; /* Conserve les proportions de l'image */
+            border-radius: 10%; /* Assure que l'image est aussi circulaire */
+        }
+
+        main {
+            padding: 20px; /* Espacement interne autour du contenu principal */
+        }
+
+        .countdown {
+            background: #0350a3; /* Couleur de fond du conteneur de décompte */
+            border-radius: 8px; /* Coins arrondis pour le conteneur */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre portée */
+            display: inline-block; /* Affiche le conteneur comme un élément en ligne */
+            padding: 20px; /* Espacement interne autour du contenu du décompte */
+        }
+
+        .timer {
+            font-size: 2em; /* Taille de la police pour les éléments de décompte */
+        }
+
+        footer {
+            background-color: #0350a3; /* Couleur de fond du pied de page */
+            color: #000000; /* Couleur du texte dans le pied de page */
+            text-align: center; /* Centre le texte dans le pied de page */
+            padding: 10px 0; /* Espacement interne en haut et en bas du pied de page */
+            position: fixed; /* Fixe le pied de page en bas de la page */
+            bottom: 0; /* Place le pied de page en bas de la fenêtre */
+            width: 100%; /* Largeur du pied de page égale à la largeur de la fenêtre */
+        }
+
+        footer a {
+            color: #ffde59; /* Couleur du lien */
+            text-decoration: none; /* Supprime le soulignement du lien */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Ajoute un soulignement au survol */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bientot disponible</h1> <!-- Titre principal de la page -->
+        <!-- Conteneur du cercle blanc -->
+        <div class="header-img-container">
+            <!-- Utilisation d'une image depuis Internet -->
+            <img src="https://s1.static-clubeo.com/uploads/alandouille-handball/logo__saedu4.png" alt="Logo de l'entreprise"> <!-- Remplacez cette URL par l'URL de votre image -->
+        </div>
+        <h1>Bientôt disponible</h1> <!-- Titre principal de la page -->
     </header>
-    <main>
-        <div id="countdown"> <!-- Conteneur principal pour le décompte -->
+    <main class="container">
+        <div class="countdown"> <!-- Conteneur pour le décompte -->
             <h2>Temps restant :</h2> <!-- Sous-titre pour la section de décompte -->
-            <div id="timer"> <!-- Conteneur pour les éléments du décompte -->
-                <span id="days"></span> Jours <!-- Élément pour afficher le nombre de jours restants -->
-                <span id="hours"></span> Heures <!-- Élément pour afficher le nombre d'heures restantes -->
-                <span id="minutes"></span> Minutes <!-- Élément pour afficher le nombre de minutes restantes -->
-                <span id="seconds"></span> Secondes <!-- Élément pour afficher le nombre de secondes restantes -->
+            <div class="timer"> <!-- Zone de décompte -->
+                <span id="days"></span> Jours <!-- Affiche le nombre de jours restants -->
+                <span id="hours"></span> Heures <!-- Affiche le nombre d'heures restantes -->
+                <span id="minutes"></span> Minutes <!-- Affiche le nombre de minutes restantes -->
+                <span id="seconds"></span> Secondes <!-- Affiche le nombre de secondes restantes -->
             </div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Décompte</p> <!-- Texte de copyright pour le bas de la page -->
+        <p>&copy; 2024 ALAHB | <a href="https://alandouille-handball.clubeo.com/" target="_blank">Visitez notre site</a></p> <!-- Lien vers un autre site -->
     </footer>
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript externe pour la logique du décompte -->
-</body>
-</html>
+    <script>
+        // La date cible pour le décompte
+        const targetDate = new Date("2025-01-31T23:59:59").getTime();
 
-        <p>&copy; 2024 Décompte</p>
-    </footer>
-    <script src="script.js"></script>
+        function updateCountdown() {
+            const now = Date.now(); // Obtient la date et l'heure actuelles
+            const distance = targetDate - now; // Calcule la différence entre la date cible et la date actuelle
+
+            if (distance < 0) {
+                document.querySelector('.timer').textContent = "Le décompte est terminé !"; // Affiche un message de fin
+                return; // Sort de la fonction si le décompte est terminé
+            }
+
+            // Calcul des jours, heures, minutes et secondes restantes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24)); // Nombre de jours restants
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Nombre d'heures restantes
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); // Nombre de minutes restantes
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000); // Nombre de secondes restantes
+
+            // Affichage des résultats
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Met à jour le décompte toutes les secondes
+        updateCountdown(); // Mise à jour immédiate
+        setInterval(updateCountdown, 1000); // Mise à jour toutes les secondes
+    </script>
 </body>
 </html>
